@@ -1,0 +1,34 @@
+///////////////////////////////////header////////////////////////////////////
+syntax = "proto3"; // set syntax to proto3
+package tutorial; // set package name
+
+import "google/protobuf/timestamp.proto"; // import the timestamp package
+
+option go_package = "github.com/jstone/rpc-testing/rpc";
+
+///////////////////////////////////body////////////////////////////////////
+
+message Person { // `message` is a data structure for serialization
+	string name = 1; // the numbers here represet
+	int32 id = 2; // Unique ID number for this person.
+	string email = 3;
+
+	enum PhoneType {
+		MOBILE = 0;
+		HOME = 1;
+		WORK = 2;
+	}
+
+	message PhoneNumber { // nested message
+		string number = 1;
+		PhoneType type = 2;
+	}
+
+	repeated PhoneNumber phone = 4; // `repeated` can be equated to a dynamically sized array with order preserved
+
+	google.protobuf.Timestamp last_updated = 5;
+}
+
+message AddressBook {
+	repeated Person person = 1;
+}
