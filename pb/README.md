@@ -24,7 +24,7 @@
 ## Code Generation
 
 ```bash
-protoc -I/Users/jameson.stone/go/src/github.com/jstone28/rpc-testing/rpc --go_out=/Users/jameson.stone/go/src/github.com/jstone28/rpc-testing/rpc /Users/jameson.stone/go/src/github.com/jstone28/rpc-testing/rpc/addressbook.proto
+protoc -I=/Users/jameson.stone/go/src/github.com/jstone28/rpc-testing/examples/helloworld --go_out=/Users/jameson.stone/go/src/github.com/jstone28/rpc-testing/examples/helloworld/ --go-grpc_out=/Users/jameson.stone/go/src/github.com/jstone28/rpc-testing/examples/helloworld/ /Users/jameson.stone/go/src/github.com/jstone28/rpc-testing/examples/helloworld/helloworld.proto
 ```
 
 where:
@@ -32,6 +32,7 @@ where:
 - `protoc` - is the `protoc` protocol buffer compiler binary.
 - `-I` - specifies the directory to search for imports.
 - `--go_out=<path>` - specifies the output directory for the generated code. Passed in is an override for the default specified in the `option go_package` in the `.proto` file.
+- `--go-grpc_out` - specifies the output directory for grpc client and server code.
 
 So that:
 

@@ -5,7 +5,6 @@ package tutorial; // set package name
 import "google/protobuf/timestamp.proto"; // import the timestamp package
 
 option go_package = "github.com/jstone/rpc-testing/rpc";
-
 ///////////////////////////////////body////////////////////////////////////
 
 message Person { // `message` is a data structure for serialization
